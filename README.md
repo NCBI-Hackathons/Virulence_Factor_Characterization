@@ -4,7 +4,7 @@
 
 # Approach
 
-Machine-learning model trained against pathogenic and non-pathogenic datasets to predict contribution to virulence of genes? Kmers?
+Machine-learning model trained against virulent and non-virulent gene datasets to predict contribution to virulence of genes?
 
 ## Installing
 
