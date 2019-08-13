@@ -8,9 +8,9 @@
 
 Gowdham Manivel
 
-Justin Payne
-justin.payne@fda.hhs.gov
-US-FDA Center for Food Safety and Applied Nutrition, College Park MD, 20710
+Justin Payne  
+justin.payne@fda.hhs.gov  
+US-FDA Center for Food Safety and Applied Nutrition, College Park MD, 20710  
 
 Sherry Bhalla
 
@@ -18,13 +18,13 @@ Liz Norred
 
 Ousmane Cissé
 
-Author Name 1
-Author email address
-Author affiliation, including full address with zip code
+Author Name 1  
+Author email address  
+Author affiliation, including full address with zip code  
 
-Author Name 2
-Author email address
-Author affiliation, including full address with zip code
+Author Name 2  
+Author email address  
+Author affiliation, including full address with zip code  
 
 ## Abstract
 300 words
@@ -48,7 +48,7 @@ Provide up to 8 keywords, comma-separated
 
 ## Data and software availability
 
-##Suggested Reviewers
+## Suggested Reviewers
 
 Please pick ten suggested reviewers with whom you have not published in the last three years and who do not work in the same department.  Papers can not be sent to F1000 research without such a list.  
 Author contributions
@@ -73,9 +73,9 @@ Instructions on using the F1000R Word plug in for reference management: http://f
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter and the `audreyr/cookiecutter-pypackage` project template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+Cookiecutter: https://github.com/audreyr/cookiecutter  
+https://github.com/audreyr/cookiecutter-pypackage
 
 
