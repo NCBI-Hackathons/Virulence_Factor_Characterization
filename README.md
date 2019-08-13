@@ -3,8 +3,7 @@
 ###### Virulence Factor Characterization project from 2019 NIH Microbial Virulence in the Cloud Hackathon
 
 # Approach
-
-Machine-learning model trained against virulent and non-virulent gene datasets to predict contribution to virulence of genes?
+HMM trained against virulent and non-virulent gene datasets to predict contribution to virulence of genes?
 
 Cluster contigs with MinHash to normalize over strongly-similar contigs
 
