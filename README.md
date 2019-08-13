@@ -6,6 +6,10 @@
 
 Machine-learning model trained against virulent and non-virulent gene datasets to predict contribution to virulence of genes?
 
+Cluster contigs with MinHash to normalize over strongly-similar contigs
+
+
+
 ## Installing
 
 ## Authors
