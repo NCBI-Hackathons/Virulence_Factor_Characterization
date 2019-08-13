@@ -2,6 +2,10 @@
 
 ###### Virulence Factor Characterization project from 2019 NIH Microbial Virulence in the Cloud Hackathon
 
+# Approach
+
+Machine-learning model trained against pathogenic and non-pathogenic datasets to predict contribution to virulence of genes? Kmers?
+
 ## Installing
 
 ## Authors
