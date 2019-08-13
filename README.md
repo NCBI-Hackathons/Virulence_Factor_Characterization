@@ -1,8 +1,6 @@
-================================================
-Virulence Factor Characterization in Metagenomes
-================================================
+# Virulence Factor Characterization in Metagenomes
 
-Virulence Factor Characterization project from 2019 NIH Microbial Virulence in the Cloud Hackathon.
+### Virulence Factor Characterization project from 2019 NIH Microbial Virulence in the Cloud Hackathon.
 
 ## Installing
 
