@@ -5,5 +5,5 @@
 import os, os.path
 
 
-data_dir = os.path.join(os.path.expanduser('~'), '.virfac', 'fasta_data')
+data_dir = os.environ.get('DATA_DIR', os.path.join(os.path.expanduser('~'), '.virfac', 'data'))
 os.makedirs(data_dir, exist_ok=True)

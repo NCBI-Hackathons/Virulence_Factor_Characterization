@@ -1,3 +1,4 @@
+import os
 import requests
 import string
 import xml.etree.ElementTree as xml
@@ -263,9 +264,10 @@ elink   = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
 
 api_key = '39bc94a6bd1a989fdaacde696739255d7709'
 
-def get_data_from_ncbi(bug_list=bugs, subdir="pathogens"):
+def get_data_from_ncbi(bug_list=bad_bugs, subdir="pathogens"):
 	for bug in bug_list:
 		sleep(.1)
+		os.makedirs(j(data_dir, subdir), exist_ok=True)
 		filename = j(data_dir, subdir, bug.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ','_').strip())
 		res = requests.get(esearch, params=dict(tool='hackathon2019', db='assembly', term=bug, retmax=1000, api_key=api_key))
 		try:
