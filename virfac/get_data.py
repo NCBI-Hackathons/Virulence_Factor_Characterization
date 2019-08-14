@@ -256,7 +256,7 @@ Streptococcus viridans
 Tsukamurella inchonensis
 Tsukamurella paurometabola
 Tsukamurella pulmonis
-Virgibacillus pantothenticus"""
+Virgibacillus pantothenticus""".split('\n')
 
 esearch = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 efetch  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
