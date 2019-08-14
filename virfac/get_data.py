@@ -8,7 +8,7 @@ from time import sleep
 from virfac import data_dir
 
 
-bugs = """Acinetobacter baumannii ACICU
+bad_bugs = """Acinetobacter baumannii ACICU
 Aeromonas hydrophila subsp. hydrophila ATCC 7966
 Aeromonas salmonicida subsp. salmonicida A449
 Aeromonas hydrophila ML09-119
@@ -159,16 +159,114 @@ Yersinia enterocolitica str. 84-50
 Yersinia enterocolitica subsp. enterocolitica 8081
 Yersinia pestis KIM 10""".split('\n')
 
+good_bugs = """Actinomyces dentalis
+Actinomyces israelii
+Actinomyces oricola
+Actinomyces oris
+Aerococcus viridans
+Aerococcus urinae
+Arthrobacter agilis
+Aerococcus sanguicola
+Aerococcus viridans
+Arcanobacterium bernardiae
+Arthrobacter agilis
+Bacillus algicola
+Bacillus barbaricus
+Bacillus firmus
+Bacillus funiculus
+Bacillus gibsonii
+Bacillus horikoshii
+Bacillus niacini
+Bacillus pasteurii
+Bacillus subtilis inaquosorum
+Brevibacillus brevis
+Brevibacterium epidermidis
+Brevibacterium oxydans
+Burkholderia_thailandensis_E264_uid58081
+Burkholderia_cenocepacia_MC0_3_uid58769 
+Burkholderia_phymatum_STM815_uid58699
+Burkholderia_CCGE1001_uid42975
+Cellulomonas hominis
+Cellulomonas turbata
+Corynebacterium acnes
+Corynebacterium caspium
+Corynebacterium flavescens
+Corynebacterium genitalium
+Corynebacterium imitans
+Corynebacterium striatum
+Corynebacterium variabilis
+Corynebacterium xerosis
+Dermabacter hominis
+Dermacoccus nishinomiyaensis
+Exiguobacterium acetylicum
+Flavobacterium arborescens
+Flavobacterium maritypicum
+Gordonia bronchialis
+Escherichia coli str. K-12 substr. MG1655
+Escherichia_coli_ED1a_uid59379
+Escherichia_coli_SE11_uid59425
+Escherichia_fergusonii_ATCC_35469_uid59375
+Escherichia_coli_HS_uid58393
+Escherichia_coli__BL21_GOLDd_DE3_pLysS_AG__uid59245
+Escherichia_coli_IAI1_uid59377
+Escherichia_coli_B_REL606_uid58803
+Escherichia_coli_K_12_substr__DH10B_uid58979
+Exiguobacterium acetylicum
+Flavobacterium arborescens
+Flavobacterium maritypicum
+Gordonia bronchialis
+Leifsonia aquatica
+Leifsonia xyli
+Micrococcus glutamicus
+Micrococcus nishinomiyaensis
+Micrococcus sedentarius
+Pseudomonas_fluorescens_Pf_5_uid57937
+Pseudomonas_putida_GB_1_uid58735
+Pseudomonas_putida_KT2440_uid57843
+Pseudomonas_fluorescens_SBW25_uid62971
+Pseudomonas_putida_W619_uid58651
+Pseudomonas_brassicacearum_NFM421_uid66303
+Pseudomonas_stutzeri_A1501_uid58641
+Rhodococcus bronchialis
+Rhodococcus erythropolis
+Rhodococcus terrae
+Staphylococcus albus
+Staphylococcus auricularis
+Staphylococcus capitis
+Staphylococcus epidermidis
+Staphylococcus hominis
+Staphylococcus nepalensis
+Staphylococcus saprophyticus
+Staphylococcus vitulinus
+Staphylococcus warneri
+Streptococcus australis
+Streptococcus caprinus
+Streptococcus crista
+Streptococcus entericus
+Streptococcus gordonii
+Streptococcus infantarius
+Streptococcus mitis
+Streptococcus mutans ferus
+Streptococcus oralis
+Streptococcus salivarius
+Streptococcus sanguis
+Streptococcus vestibularis
+Streptococcus viridans
+Tsukamurella inchonensis
+Tsukamurella paurometabola
+Tsukamurella pulmonis
+Virgibacillus pantothenticus"""
+
 esearch = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 efetch  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 elink   = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
 
 api_key = '39bc94a6bd1a989fdaacde696739255d7709'
 
-def get_data_from_ncbi(bug_list=bugs):
+def get_data_from_ncbi(bug_list=bugs, subdir="pathogens"):
 	for bug in bug_list:
 		sleep(.1)
-		filename = j(data_dir, bug.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ','_').strip())
+		filename = j(data_dir, subdir, bug.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ','_').strip())
 		res = requests.get(esearch, params=dict(tool='hackathon2019', db='assembly', term=bug, retmax=1000, api_key=api_key))
 		try:
 			rec = xml.fromstring(res.content)

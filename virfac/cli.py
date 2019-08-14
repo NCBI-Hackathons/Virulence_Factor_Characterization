@@ -50,8 +50,14 @@ def main(args=None):
 @main.command('get-data')
 def run_get_data():
     import get_data
-    get_data.get_data_from_ncbi()
+    get_data.get_data_from_ncbi(get_data.bad_bugs, "pathogens")
+    get_data.get_data_from_ncbi(get_data.good_bugs, "commesurals")
 
+@main.command('set-data-folder')
+@click.argument('path', type=click.Path(dir_okay=True, file_okay=False, resolve_path=True))
+def set_data_folder(path):
+    import get_data
+    get_data.data_dir = path
 
 if __name__ == "__main__":
     sys.exit(main())  # pragma: no cover
