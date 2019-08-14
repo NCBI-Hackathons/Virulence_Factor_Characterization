@@ -7,7 +7,7 @@ HMM trained against virulent and non-virulent gene datasets to predict contribut
 
 Cluster contigs with MinHash to normalize over strongly-similar contigs
 
-![workflow](VFC workflow.png "workflow")
+![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFC%20workflow.png)
 
 
 
