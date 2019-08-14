@@ -264,7 +264,7 @@ elink   = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
 
 api_key = '39bc94a6bd1a989fdaacde696739255d7709'
 
-def get_data_from_ncbi(bug_list=bad_bugs, subdir="pathogens"):
+def get_data_from_ncbi(bug_list=bad_bugs, subdir="pathogens", esearch=esearch, efetch=efetch, elink=elink, api_key=api_key):
 	for bug in bug_list:
 		sleep(.1)
 		os.makedirs(j(data_dir, subdir), exist_ok=True)
