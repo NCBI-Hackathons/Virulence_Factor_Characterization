@@ -23,31 +23,6 @@ scikit-learn==0.21.3
 
 Eventually the project will be available on PyPI.
 
-## Authors
-
-Ousmane H. Cissé  
-ousmane.cisse@nih.gov  
-NIH Clinical Center  
-Bethesda MD, 20814
-
-Shennan Lu
-
-Liz Norred  
-elizabeth.norred@gmail.com  
-University of Tennessee, Knoxville  
-Knoxville TN, 37922 
-
-Justin Payne  
-justin.payne@fda.hhs.gov  
-US-FDA Center for Food Safety and Applied Nutrition  
-College Park MD, 20710  
-
-Sherry Bhalla  
-sherry.bhalla@mssm.edu  
-Icahn School of Medicine at Mount Sinai, New York, NY, 20019    
-ORCID: 0000-0001-7827-4050  
-Bredesen Center for Interdisciplinary Research and Education, University of Tennessee, Knoxville, TN 37922  
-
 ## Methods
 
 Experimentally verified virulence factor genes from the Virulence Factor Database (VFDB: Chen et al 2015, Accessed 8/13/19 https://academic.oup.com/nar/article/44/D1/D694/2503049) were used to represent virulence-associated genes. Example metagenomes used for testing were drawn from public datasets listed on NCBI SRA and included healthy and disease-state human skin metagenomic samples. Specifically, diseased metagenomes were drawn from the Diabetic Foot Ulcer metagenome study (BioProject: PRJNA506988) and healthy foot skin metagenomes were drawn from BioProject: PRJEB30094. Metagenomes were assembled using MetaSPADES. (Nurk et al https://www.ncbi.nlm.nih.gov/pubmed/28298430 )
@@ -68,6 +43,32 @@ A SVM model was also developed to classify virulent and non-virulent gene segmen
 ## Data and software availability
 
 Data is available from the NCBI Sequence Read Archive under projects ERP112507 and SRP170931. "VirFac" software is made available under the MIT License (see [LICENSE](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/LICENSE).)
+
+## Authors
+
+Ousmane H. Cissé  
+ousmane.cisse@nih.gov  
+NIH Clinical Center  
+Bethesda MD, 20814
+
+Shennan Lu
+
+Liz Norred  
+elizabeth.norred@gmail.com  
+Bredesen Center for Interdisciplinary Research and Education, University of Tennessee, Knoxville, TN 37922  
+Knoxville TN, 37922 
+
+Justin Payne  
+justin.payne@fda.hhs.gov  
+US-FDA Center for Food Safety and Applied Nutrition  
+College Park MD, 20710  
+
+Sherry Bhalla  
+sherry.bhalla@mssm.edu  
+Icahn School of Medicine at Mount Sinai 
+New York, NY, 20019    
+ 
+
 
 ## Acknowledgements
 Diabetic Foot Ulcer dataset provided courtesy of UMaryland/CosmosID and described at
