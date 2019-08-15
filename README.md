@@ -24,11 +24,10 @@ Sherry Bhalla
 
 Liz Norred
 
-Ousmane Cissé
-
-Author Name 1  
-Author email address  
-Author affiliation, including full address with zip code  
+Ousmane H. Cissé
+ousmane.cisse@nih.gov
+NIH Clinical Center
+Bethesda MD, 20814
 
 Author Name 2  
 Author email address  
