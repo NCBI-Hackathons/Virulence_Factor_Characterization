@@ -39,7 +39,13 @@ College Park MD, 20710
 
 ## Methods
 
-Experimentally verified virulence factor genes from the Virulence Factor Database (VFDB: Chen et al 2015, Accessed 8/13/19 https://academic.oup.com/nar/article/44/D1/D694/2503049) were used to represent virulence-associated genes. A Hidden Markov Model (HMM) was applied to the VFDB genes to create virulence profiles.
+Experimentally verified virulence factor genes from the Virulence Factor Database (VFDB: Chen et al 2015, Accessed 8/13/19 https://academic.oup.com/nar/article/44/D1/D694/2503049) were used to represent virulence-associated genes. Example metagenomes used for testing were drawn from public datasets listed on NCBI SRA and included healthy and disease-state human skin metagenomic samples. Specifically, diseased metagenomes were drawn from the Diabetic Foot Ulcer metagenome study (BioProject: PRJNA506988) and healthy foot skin metagenomes were drawn from BioProject: PRJEB30094. Metagenomes were assembled using MetaSPADES. (Nurk et al https://www.ncbi.nlm.nih.gov/pubmed/28298430 )
+
+A Hidden Markov Model (HMM) was applied to the VFDB genes to create virulence profiles. Genes were selected for which at least five different bacterial species were available. Multiple sequence alignments were generated using MUSCLE [1] and HMMs using HMMER3 [2]. Genomes and/or corresponding protein coding sequences were screened with HMMSEARCH[2] using pre-computed significance scores. Scores were calculated as 80% of the envelope alignment score of a representative sequence corresponding to its HMM. Alignments were filtered by custom scripts to extract putative virulence factors’ loci. VF sequences were concatenated, aligned and used as input for phylogenetic analyses. Phylogenetic trees were constructed using RAXML-ng [3] and analyzed using R package Ape[4] and Newick Utilities[5]. Virulence tags were assigned based on the number of virulence loci found and phylogenetic classification. All analyses are described in Snakemake pipeline[6].
+
+A SVM model was also developed to classify virulent and non-virulent gene segments by training on a reference set of labelled pathogen and commensal genomes. The pathogen genomes were acquired from an NCBI Assembly search and included the species identified in the VFDB dataset. Commensal genomes were also acquired from an NCBI Assembly search, and included species selected from the NHSN Common Commensals List (https://www.cdc.gov/nhsn/pdfs/pscmanual/4psc_clabscurrent.pdf) and from Busby et al 2012 (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5866053/). 
+
+
 
 ## Implementation
 
