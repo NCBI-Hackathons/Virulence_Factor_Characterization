@@ -5,7 +5,7 @@
 # Approach
 We used parallel machine learning methods to approach the problem of characterizing virulence factors (VF) in diseased and healthy metagenomes. Using genes from the core set of the Virulence Factor Database (http://www.mgc.ac.cn/VFs/), we used an HMM to profile known virulence factors and apply profiles to diseased and healthy metagenomes. Using the same gene factors, we found pathogen genomes from the VFDB set and commensal genomes from the NHSN organism list and (other source) and masked the VFDB virulence genes from both datasets. We then trained the VF-subtracted genomes on an SVM model to classify pathogenic and non-pathogenic genomes. Both techniques form a complementary approach to VF characterization by using well-characterized virulence factors to profile similar characteristics in the metagenome space (HMM), and by exploring the potential for uncharacterized or weakly characterized genes within the same metagenomes. 
 
-![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFC%20workflow.png)
+![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFCflow.png)
 
 ## Installing
 
