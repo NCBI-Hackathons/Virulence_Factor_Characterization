@@ -24,10 +24,10 @@ Bethesda MD, 20814
 
 Shennan Lu
 
-Liz Norred
-elizabeth.norred@gmail.com
-University of Tennessee, Knoxville
-Knoxville TN, 37922
+Liz Norred  
+elizabeth.norred@gmail.com  
+University of Tennessee, Knoxville  
+Knoxville TN, 37922 
 
 Justin Payne  
 justin.payne@fda.hhs.gov  
