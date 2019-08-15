@@ -263,13 +263,15 @@ efetch  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 elink   = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
 
 api_key = '39bc94a6bd1a989fdaacde696739255d7709'
+#api_key = None
 
 def get_data_from_ncbi(bug_list=bad_bugs, subdir="pathogens", esearch=esearch, efetch=efetch, elink=elink, api_key=api_key):
 	for bug in bug_list:
-		sleep(.1)
+		#sleep(.1)
 		os.makedirs(j(data_dir, subdir), exist_ok=True)
 		filename = j(data_dir, subdir, bug.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ','_').strip() + '.fasta')
 		res = requests.get(esearch, params=dict(tool='hackathon2019', db='assembly', term=bug, retmax=1000, api_key=api_key))
+		res.raise_for_status()
 		try:
 			rec = xml.fromstring(res.content)
 		except xml.ParseError:
@@ -285,7 +287,7 @@ def get_data_from_ncbi(bug_list=bad_bugs, subdir="pathogens", esearch=esearch, e
 			except xml.ParseError:
 				print(res.content)
 				break
-			sleep(.1)
+			#sleep(.1)
 			for fa_id in [e.text for e in rec.findall(r".//*[DbTo='nuccore']//Id")]:
 				res = requests.get(efetch, params=dict(tool='hackathon2019', db='nuccore', Id=fa_id, rettype='fasta', api_key=api_key))
 				with open(filename, 'wb') as fd:
