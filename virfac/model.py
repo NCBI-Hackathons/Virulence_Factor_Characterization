@@ -61,3 +61,4 @@ def train_model(path_to_csv):
 	print(classification_report(final_actual, final_pred_discrete))
 	print("AUROC")
 	print(roc_auc_score(final_actual, final_pred))
+	#what do we return
