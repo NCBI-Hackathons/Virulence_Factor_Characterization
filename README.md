@@ -7,7 +7,7 @@ We used parallel machine learning methods to approach the problem of characteriz
 
 Cluster contigs with MinHash to normalize over strongly-similar contigs
 
-![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFC%20workflow (1).png)
+![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFC%20workflow.png)
 
 
 
