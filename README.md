@@ -7,8 +7,6 @@ While there have been substantial advances in understanding microbial virulence 
 
 We used parallel machine learning methods to approach the problem of characterizing virulence factors (VF) in diseased and healthy metagenomes. Using genes from the core set of the Virulence Factor Database (http://www.mgc.ac.cn/VFs/), we used an HMM to profile known virulence factors and apply profiles to diseased and healthy metagenomes. In parallel to this approach, we used a set of labelled pathological and commensal genomes and subtracted the VFDB virulence factor genes from both sets. We then trained the VF-subtracted genomes on an SVM model to classify pathogenic and non-pathogenic genomes. Both techniques form a complementary approach to VF characterization by using well-characterized virulence factors and commensal genomes to profile similar characteristics in the metagenome space (HMM), and by exploring the potential for virulent genes uncharacterized by the VF dataset within the same metagenomes. This combination of techniques can provide spatially-resolved scoring within the metagenome to identify potential virulence factors.
 
-![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFCflow.png)
-
 ## Installing
 
 Currently the VirFac repo is provided as a Python project that can be installed via `setuptools`. It requires Python 3.7 or later and some package dependencies that can be installed via `pip`:
@@ -63,8 +61,9 @@ A SVM model was also developed to classify virulent and non-virulent gene segmen
 ## Implementation
 
 ## Operation
+![workflow](https://github.com/NCBI-Hackathons/Virulence_Factor_Characterization/blob/master/VFCflow.png)
 
-## Use Cases
+## Results
 
 ## Data and software availability
 
