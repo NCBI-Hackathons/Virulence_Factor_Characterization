@@ -292,7 +292,8 @@ def get_data_from_ncbi(bug_list=bad_bugs, subdir="pathogens", esearch=esearch, e
 					for i, chunk in enumerate(res.iter_content(chunk_size=128)):
 						fd.write(chunk)
 				print(f"{i*128} bytes read.")
-				break #just need the first one
+				if i*128 > 5000:
+					break #just need the first one, otherwise keep going
 			break
 
 
