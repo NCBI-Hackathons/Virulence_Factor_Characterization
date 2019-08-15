@@ -24,9 +24,9 @@ Sherry Bhalla
 
 Liz Norred
 
-Ousmane H. Cissé
-ousmane.cisse@nih.gov
-NIH Clinical Center
+Ousmane H. Cissé 
+ousmane.cisse@nih.gov 
+NIH Clinical Center 
 Bethesda MD, 20814
 
 Author Name 2  
