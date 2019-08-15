@@ -1,0 +1,47 @@
+rule all:
+	input:
+		"../data/processed/VFDB/tmp.txt"
+
+rule get_genes:
+	input:
+		setAnt ="../data/raw/VFDB/VFDB_setA_nt.fas", 
+		setAprot="../data/raw/VFDB/VFDB_setA_pro.fas",
+		setBnt="../data/raw/VFDB/VFDB_setB_nt.fas",
+		setBprot="../data/raw/VFDB/VFDB_setB_pro.fas"
+	output:
+		setAnt="../data/processed/VFDB/setAnt.fas.Selected_Genes_info.txt",
+		setAprot="../data/processed/VFDB/setApro.fas.Selected_Genes_info.txt",
+		setBnt="../data/processed/VFDB/setA_pro.fas.Selected_Genes_info.txt",
+		setBprot="../data/processed/VFDB/setB_pro.fas.Selected_Genes_info.txt"
+
+ 	conda:
+ 		"envs/meta.yaml"
+
+	threads: 1
+
+	run:
+		shell("perl ../scripts/group_by_genes.pl {input.setAnt} > {output.setAnt}")
+		shell("perl ../scripts/group_by_genes.pl {input.setAprot} > {output.setAprot}")
+		shell("perl ../scripts/group_by_genes.pl {input.setBnt} > {output.setBnt}")
+		shell("perl ../scripts/group_by_genes.pl {input.setBprot} > {output.setBprot}")
+
+rule build_hmm:
+	input:
+		setAnt=rules.get_genes.output.setAnt,
+		setAprot=rules.get_genes.output.setBprot,
+		setBnt=rules.get_genes.output.setBnt,
+		setBprot=rules.get_genes.output.setBprot,
+		setAn="../data/raw/VFDB/VFDB_setA_nt.fas",
+		setAp="../data/raw/VFDB/VFDB_setA_pro.fas",
+		setBn="../data/raw/VFDB/VFDB_setB_nt.fas",
+		setBp="../data/raw/VFDB/VFDB_setB_pro.fas",
+	
+	output:
+		"../data/processed/VFDB/tmp.txt"
+
+	run:
+ 		shell("perl ../scripts/buil_hmm.pl {input.setAnt} {input.setAn}")
+ 		shell("perl ../scripts/buil_hmm.pl {input.setAprot} {input.setAp}")
+		shell("perl ../scripts/buil_hmm.pl {input.setBnt} {input.setBn}")
+		shell("perl ../scripts/buil_hmm.pl {input.setBprot} {input.setBp}")
+

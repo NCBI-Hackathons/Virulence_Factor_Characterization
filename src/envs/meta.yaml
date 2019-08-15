@@ -1,0 +1,7 @@
+channels:
+        bioconda
+dependencies:
+        - seqtk
+        - muscle
+        - hmmer
+
