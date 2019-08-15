@@ -25,8 +25,6 @@ Eventually the project will be available on PyPI.
 
 ## Authors
 
-Sherry Bhalla
-
 Ousmane H. Cissé  
 ousmane.cisse@nih.gov  
 NIH Clinical Center  
