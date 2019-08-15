@@ -17,7 +17,7 @@ Our approach combines a
 
 ## Authors
 
-Gowdham Manivel
+Shennan Lu
 
 Justin Payne  
 justin.payne@fda.hhs.gov  
