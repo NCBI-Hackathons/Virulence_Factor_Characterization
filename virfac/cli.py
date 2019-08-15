@@ -53,5 +53,11 @@ def run_get_data():
     get_data.get_data_from_ncbi(get_data.bad_bugs, "pathogens")
     get_data.get_data_from_ncbi(get_data.good_bugs, "commesurals")
 
+@main.command('train-model')
+@click.argument('path_to_csv', type=click.Path(file_okay=True, dir_okay=False, exists=True))
+def run_train_model(path_to_csv):
+    import model
+    train_model(path_to_csv)
+
 if __name__ == "__main__":
     sys.exit(main())  # pragma: no cover
