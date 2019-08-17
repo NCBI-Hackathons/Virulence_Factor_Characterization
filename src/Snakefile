@@ -1,6 +1,9 @@
-rule all:
-	input:
-		"../data/processed/VFDB/tmp.txt"
+configfile: "config_pathogens.yaml"
+
+#rule all:
+#	input:
+#		"/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/SRR8247573.nt.tab"
+#	"../data/processed/VFDB/HMM/tmp.txt"
 
 rule get_genes:
 	input:
@@ -14,8 +17,8 @@ rule get_genes:
 		setBnt="../data/processed/VFDB/setA_pro.fas.Selected_Genes_info.txt",
 		setBprot="../data/processed/VFDB/setB_pro.fas.Selected_Genes_info.txt"
 
- 	conda:
- 		"envs/meta.yaml"
+#	conda:
+#		"envs/meta.yaml"
 
 	threads: 1
 
@@ -37,11 +40,35 @@ rule build_hmm:
 		setBp="../data/raw/VFDB/VFDB_setB_pro.fas",
 	
 	output:
-		"../data/processed/VFDB/tmp.txt"
+		"../data/processed/VFDB/HMM/tmp.txt"
 
 	run:
- 		shell("perl ../scripts/buil_hmm.pl {input.setAnt} {input.setAn}")
- 		shell("perl ../scripts/buil_hmm.pl {input.setAprot} {input.setAp}")
+		#shell("echo > $output")
+#		shell("perl ../scripts/buil_hmm.pl {input.setAnt} {input.setAn}")
+#		shell("perl ../scripts/buil_hmm.pl {input.setAprot} {input.setAp}")
 		shell("perl ../scripts/buil_hmm.pl {input.setBnt} {input.setBn}")
 		shell("perl ../scripts/buil_hmm.pl {input.setBprot} {input.setBp}")
 
+
+
+# randomly picked two for test
+rule test_hmm:
+	input:
+		hmmP="/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/VFDB_setA_pro.hmm",
+		hmmN="/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/VFDB_setA_nt.hmm",
+		fasta=expand("sample=config["samples"]) 
+#		t1="/data/SRP170931/spades_contigs/SRR8247572.fasta",
+#		t2="/data/SRP170931/spades_contigs/SRR8247573.fasta"
+	output:
+		temp("/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/pathogens/{sample}.tab")
+#		t1="/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/SRR8247572.nt.tab",
+#		t2="/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/SRR8247573.nt.tab"
+	params:
+		eval="1e-10"
+
+	threads: 8
+#	run:
+#		shell("hmmsearch -E {params.eval} --cpu {threads} -Z 21154 --domtblout {output.t1} {input.hmmN} {input.t1}")
+#		shell("hmmsearch -E {params.eval} --cpu {threads} -Z 21154 --domtblout {output.t2} {input.hmmN} {input.t2}")	
+	shell:
+		"hmmsearch -E {params.eval} --cpu {threads} --domtblout {output} {input.hmmN} {input.fasta}"
