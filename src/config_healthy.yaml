@@ -1,0 +1,14 @@
+samples:
+	G1: /data/healthy_contigs/ERR2983314.fasta
+	G2: /data/healthy_contigs/ERR2983315.fasta
+	G3: /data/healthy_contigs/ERR2983316.fasta
+	G4: /data/healthy_contigs/ERR2983317.fasta
+	G5: /data/healthy_contigs/ERR2983318.fasta
+	G6: /data/healthy_contigs/ERR2983319.fasta
+	G7: /data/healthy_contigs/ERR2983320.fasta
+	G8: /data/healthy_contigs/ERR2983321.fasta
+	G9: /data/healthy_contigs/ERR2983322.fasta
+	G10: /data/healthy_contigs/ERR2983325.fasta
+	G11: /data/healthy_contigs/ERR2983326.fasta
+	G12: /data/healthy_contigs/ERR2983328.fasta
+	G13: /data/healthy_contigs/ERR2983331.fasta

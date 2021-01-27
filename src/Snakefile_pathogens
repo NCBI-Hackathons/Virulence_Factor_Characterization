@@ -1,0 +1,22 @@
+configfile: "config_pathogens.yaml"
+
+rule all:
+	input:
+		expand("/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/pathogens/{sample}.tab", sample=config["samples"])
+		
+rule testhmm:
+	input:
+	      hmmP="/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/VFDB_setA_pro.hmm",
+	      hmmN="/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/VFDB_setA_nt.hmm",
+	      fasta=expand("/data/pathogens/{sample}", sample=config["samples"])
+	
+	output:
+		"/home/ousmane.cisse/DATA/NCBI_hack/data/processed/VFDB/pathogens/{sample}.tab"
+	
+	params:
+		eval="1e-10"
+
+	threads: 8
+	
+	shell:
+		"hmmsearch -E {params.eval} --cpu {threads} --domtblout {output} {input.hmmN} {input.fasta}"
